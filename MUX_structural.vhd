@@ -16,4 +16,6 @@ architecture structural of MUX_structural is
 begin
 -- S false is A and true is B 
     Y <= (A and not S) or (B and S);
+	 
+-- cost: pin: 6, module: 3
 end structural;

@@ -25,43 +25,47 @@
 -- 
 
 LIBRARY ieee;                                               
-USE ieee.std_logic_1164.all;                                
+USE ieee.std_logic_1164.all;  
+use ieee.numeric_std.all;
+                              
 
 ENTITY barrel_shifter_behavioral_vhd_tst IS
+
 END barrel_shifter_behavioral_vhd_tst;
 ARCHITECTURE barrel_shifter_behavioral_arch OF barrel_shifter_behavioral_vhd_tst IS
 -- constants                                                 
--- signals                                                   
-SIGNAL sel : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL X : STD_LOGIC_VECTOR(3 DOWNTO 0);
+-- signals       
+SIGNAL X : STD_LOGIC_VECTOR(3 DOWNTO 0) := "0000";                                            
+SIGNAL sel : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
 SIGNAL Y : STD_LOGIC_VECTOR(3 DOWNTO 0);
 COMPONENT barrel_shifter_behavioral
 	PORT (
-	sel : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	X : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	Y : BUFFER STD_LOGIC_VECTOR(3 DOWNTO 0)
+		X   : in  std_logic_vector(3 downto 0);
+      sel : in  std_logic_vector(1 downto 0);
+      Y   : out std_logic_vector(3 downto 0)
 	);
 END COMPONENT;
 BEGIN
 	i1 : barrel_shifter_behavioral
 	PORT MAP (
 -- list connections between master ports and signals
-	sel => sel,
 	X => X,
+	sel => sel,
 	Y => Y
 	);
-init : PROCESS                                               
--- variable declarations                                     
-BEGIN                                                        
-        -- code that executes only once                      
-WAIT;                                                       
-END PROCESS init;                                           
-always : PROCESS                                              
--- optional sensitivity list                                  
--- (        )                                                 
--- variable declarations                                      
-BEGIN                                                         
-        -- code executes for every event on sensitivity list  
-WAIT;                                                        
-END PROCESS always;                                          
+
+
+PROCESS
+BEGIN
+	FOR i IN 0 TO 15 LOOP -- loop over all X values
+		FOR j IN 0 TO 3 LOOP -- loop over all sel values
+			X <= std_logic_vector(to_unsigned(i, 4)); -- convert the loop variable i to std_logic_vector
+			sel <= std_logic_vector(to_unsigned(j, 2)); -- convert the loop variable j to std_logic_vector
+			WAIT FOR 10 ns; -- suspend process for 10 nanoseconds at the start of each loop
+		END LOOP; -- end the j loop
+	END LOOP; -- end the i loop
+	WAIT; -- we have gone through all possible input patterns, so suspend simulator forever
+END PROCESS;
+
+					  
 END barrel_shifter_behavioral_arch;

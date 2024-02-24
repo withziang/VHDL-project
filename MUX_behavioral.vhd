@@ -17,5 +17,7 @@ begin
 	with S select
 		 Y <= A when '0',
 				B	when others;
-	 
+				
+
 end behavioral;
+

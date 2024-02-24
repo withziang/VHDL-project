@@ -17,58 +17,53 @@
 -- suit user's needs .Comments are provided in each section to help the user  
 -- fill out necessary details.                                                
 -- ***************************************************************************
--- Generated on "02/24/2024 12:04:30"
+-- Generated on "02/24/2024 00:05:28"
                                                             
--- Vhdl Test Bench template for design  :  barrel_shifter_structural
+-- Vhdl Test Bench template for design  :  barrel_shifter_behavioral
 -- 
 -- Simulation tool : ModelSim-Altera (VHDL)
 -- 
 
 LIBRARY ieee;                                               
-USE ieee.std_logic_1164.all;    
-use ieee.numeric_std.all;
-										
+USE ieee.std_logic_1164.all;                                
 
-ENTITY barrel_shifter_structural_vhd_tst IS
-END barrel_shifter_structural_vhd_tst;
-ARCHITECTURE barrel_shifter_structural_arch OF barrel_shifter_structural_vhd_tst IS
+ENTITY barrel_shifter_behavioral_vhd_tst IS
+END barrel_shifter_behavioral_vhd_tst;
+ARCHITECTURE barrel_shifter_behavioral_arch OF barrel_shifter_behavioral_vhd_tst IS
 -- constants                                                 
--- signals                                                   
+-- signals       
+SIGNAL X : STD_LOGIC_VECTOR(3 DOWNTO 0);                                            
 SIGNAL sel : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL X : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL Y : STD_LOGIC_VECTOR(3 DOWNTO 0);
-COMPONENT barrel_shifter_structural
+COMPONENT barrel_shifter_behavioral
 	PORT (
-	sel : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	X : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	Y : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+		X   : in  std_logic_vector(3 downto 0);
+      sel : in  std_logic_vector(1 downto 0);
+      Y   : out std_logic_vector(3 downto 0)
 	);
 END COMPONENT;
 BEGIN
-	i1 : barrel_shifter_structural
+	i1 : barrel_shifter_behavioral
 	PORT MAP (
 -- list connections between master ports and signals
-	sel => sel,
 	X => X,
+	sel => sel,
 	Y => Y
 	);
-init : PROCESS                                               
--- variable declarations                                     
-BEGIN                                                        
-        -- code that executes only once                      
-WAIT;                                                       
-END PROCESS init;                                           
-PROCESS
+
+
+generate_test: PROCESS
 BEGIN
-    FOR i IN 0 TO 15 LOOP -- loop over all X values
+    FOR i IN 0 TO 16 LOOP -- loop over all X values
         X <= std_logic_vector(to_unsigned(i, 4)); -- convert the loop variable i to std_logic_vector
-        FOR j IN 0 TO 3 LOOP -- loop over all sel values
+        FOR j IN 0 TO 4 LOOP -- loop over all sel values
             sel <= std_logic_vector(to_unsigned(j, 2)); -- convert the loop variable j to std_logic_vector
             WAIT FOR 10 ns; -- suspend process for 10 nanoseconds at the start of each loop
         END LOOP; -- end the j loop
     END LOOP; -- end the i loop
     WAIT; -- we have gone through all possible input patterns, so suspend simulator forever
-END PROCESS;
+END PROCESS generate_test;
 
-                                         
-END barrel_shifter_structural_arch;
+
+					  
+END barrel_shifter_behavioral_arch;

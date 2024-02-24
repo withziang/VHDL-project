@@ -17,9 +17,9 @@
 -- suit user's needs .Comments are provided in each section to help the user  
 -- fill out necessary details.                                                
 -- ***************************************************************************
--- Generated on "02/23/2024 16:18:52"
+-- Generated on "02/24/2024 00:06:36"
                                                             
--- Vhdl Test Bench template for design  :  mux_behaviour
+-- Vhdl Test Bench template for design  :  barrel_shifter_structural
 -- 
 -- Simulation tool : ModelSim-Altera (VHDL)
 -- 
@@ -27,50 +27,44 @@
 LIBRARY ieee;                                               
 USE ieee.std_logic_1164.all;                                
 
-ENTITY mux_behaviour_vhd_tst IS
-END mux_behaviour_vhd_tst;
-ARCHITECTURE mux_behaviour_arch OF mux_behaviour_vhd_tst IS
+ENTITY barrel_shifter_structural_vhd_tst IS
+END barrel_shifter_structural_vhd_tst;
+ARCHITECTURE barrel_shifter_structural_arch OF barrel_shifter_structural_vhd_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL A : STD_LOGIC;
-SIGNAL B : STD_LOGIC;
-SIGNAL S : STD_LOGIC;
-SIGNAL Y : STD_LOGIC;
-COMPONENT mux_behaviour
+SIGNAL X : STD_LOGIC_VECTOR(3 DOWNTO 0);                                            
+SIGNAL sel : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL Y : STD_LOGIC_VECTOR(3 DOWNTO 0);
+COMPONENT barrel_shifter_behavioral
 	PORT (
-	A : IN STD_LOGIC;
-	B : IN STD_LOGIC;
-	S : IN STD_LOGIC;
-	Y : OUT STD_LOGIC
+		X   : in  std_logic_vector(3 downto 0);
+      sel : in  std_logic_vector(1 downto 0);
+      Y   : out std_logic_vector(3 downto 0)
 	);
 END COMPONENT;
 BEGIN
-	i1 : mux_behaviour
+	i1 : barrel_shifter_structural
 	PORT MAP (
 -- list connections between master ports and signals
-	A => A,
-	B => B,
-	S => S,
+	sel => sel,
+	X => X,
 	Y => Y
 	);
-init : PROCESS                                               
--- variable declarations                                     
-BEGIN                                                        
-        -- code that executes only once                      
-WAIT;                                                       
-END PROCESS init;  
-                                         
+
+
 generate_test: PROCESS
 BEGIN
-	 A <= '0';
-    B <= '1';
-	 
-	 S <= '0';
-    wait for 10 ns;
-	 S <= '1';
-    wait for 10 ns;
+    FOR i IN 0 TO 16 LOOP -- loop over all X values
+        X <= std_logic_vector(to_unsigned(i, 4)); -- convert the loop variable i to std_logic_vector
+        FOR j IN 0 TO 4 LOOP -- loop over all sel values
+            sel <= std_logic_vector(to_unsigned(j, 2)); -- convert the loop variable j to std_logic_vector
+            WAIT FOR 10 ns; -- suspend process for 10 nanoseconds at the start of each loop
+        END LOOP; -- end the j loop
+    END LOOP; -- end the i loop
+    WAIT; -- we have gone through all possible input patterns, so suspend simulator forever
 END PROCESS generate_test;
-      
 
-		
-END mux_behaviour_arch;
+
+
+                                             
+END barrel_shifter_structural_arch;

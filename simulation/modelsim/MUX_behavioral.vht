@@ -53,20 +53,16 @@ BEGIN
 	S => S,
 	Y => Y
 	);
-init : PROCESS                                               
--- variable declarations                                     
-BEGIN                                                        
-        -- code that executes only once                      
-WAIT;                                                       
-END PROCESS init;                                           
-generate_test: PROCESS
+                                          
+always : PROCESS
 BEGIN
-	 A <= '0';
+    A <= '0';
     B <= '1';
 	 
 	 S <= '0';
     wait for 10 ns;
 	 S <= '1';
     wait for 10 ns;
-END PROCESS generate_test;                                         
+    wait; -- this waits forever ...
+END PROCESS always;                                      
 END MUX_behavioral_arch;

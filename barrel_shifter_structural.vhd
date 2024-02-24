@@ -43,6 +43,6 @@ begin
 	MUX_7: MUX_structural port map (A => c3,b => c2,S => sel(1), y => Y(2));
 	MUX_8: MUX_structural port map (A => c4,b => c3,S => sel(1), y => Y(3));
 	
-	
+-- cost: pin: 48, module: 24
 	 
 end structural;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g67_lab1
-Sat Feb 24 00:06:27 2024
+Sat Feb 24 12:14:34 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -43,10 +43,10 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Feb 24 00:06:27 2024       ;
+; Analysis & Synthesis Status     ; Successful - Sat Feb 24 12:14:34 2024       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; g67_lab1                                    ;
-; Top-level Entity Name           ; barrel_shifter_structural                   ;
+; Top-level Entity Name           ; barrel_shifter_behavioral                   ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
@@ -69,7 +69,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting                   ; Default Value      ;
 +---------------------------------------------------------------------------------+---------------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6              ;                    ;
-; Top-level entity name                                                           ; barrel_shifter_structural ; g67_lab1           ;
+; Top-level entity name                                                           ; barrel_shifter_behavioral ; g67_lab1           ;
 ; Family name                                                                     ; Cyclone V                 ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                       ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                        ; On                 ;
@@ -171,8 +171,8 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
-; MUX_structural.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.0/Assignmen1/MUX_structural.vhd            ;         ;
-; barrel_shifter_structural.vhd    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.0/Assignmen1/barrel_shifter_structural.vhd ;         ;
+; MUX_behavioral.vhd               ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.0/Assignmen1/MUX_behavioral.vhd            ;         ;
+; barrel_shifter_behavioral.vhd    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.0/Assignmen1/barrel_shifter_behavioral.vhd ;         ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
@@ -208,11 +208,11 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name               ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+---------------------------+--------------+
-; |barrel_shifter_structural ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 10   ; 0            ; |barrel_shifter_structural                      ; barrel_shifter_structural ; work         ;
-;    |MUX_structural:MUX_5|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_structural|MUX_structural:MUX_5 ; MUX_structural            ; work         ;
-;    |MUX_structural:MUX_6|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_structural|MUX_structural:MUX_6 ; MUX_structural            ; work         ;
-;    |MUX_structural:MUX_7|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_structural|MUX_structural:MUX_7 ; MUX_structural            ; work         ;
-;    |MUX_structural:MUX_8|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_structural|MUX_structural:MUX_8 ; MUX_structural            ; work         ;
+; |barrel_shifter_behavioral ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 10   ; 0            ; |barrel_shifter_behavioral                      ; barrel_shifter_behavioral ; work         ;
+;    |MUX_behavioral:MUX_5|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_behavioral|MUX_behavioral:MUX_5 ; MUX_behavioral            ; work         ;
+;    |MUX_behavioral:MUX_6|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_behavioral|MUX_behavioral:MUX_6 ; MUX_behavioral            ; work         ;
+;    |MUX_behavioral:MUX_7|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_behavioral|MUX_behavioral:MUX_7 ; MUX_behavioral            ; work         ;
+;    |MUX_behavioral:MUX_8|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |barrel_shifter_behavioral|MUX_behavioral:MUX_8 ; MUX_behavioral            ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -237,7 +237,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |barrel_shifter_structural|MUX_structural:MUX_6|Y ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |barrel_shifter_behavioral|MUX_behavioral:MUX_6|Y ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
@@ -272,7 +272,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Sat Feb 24 00:06:13 2024
+    Info: Processing started: Sat Feb 24 12:14:24 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g67_lab1 -c g67_lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -288,8 +288,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file barrel_
 Info (12021): Found 2 design units, including 1 entities, in source file barrel_shifter_behavioral.vhd
     Info (12022): Found design unit 1: barrel_shifter_behavioral-behavioral File: C:/intelFPGA_lite/18.0/Assignmen1/barrel_shifter_behavioral.vhd Line: 15
     Info (12023): Found entity 1: barrel_shifter_behavioral File: C:/intelFPGA_lite/18.0/Assignmen1/barrel_shifter_behavioral.vhd Line: 6
-Info (12127): Elaborating entity "barrel_shifter_structural" for the top level hierarchy
-Info (12128): Elaborating entity "MUX_structural" for hierarchy "MUX_structural:MUX_1" File: C:/intelFPGA_lite/18.0/Assignmen1/barrel_shifter_structural.vhd Line: 34
+Info (12127): Elaborating entity "barrel_shifter_behavioral" for the top level hierarchy
+Info (12128): Elaborating entity "MUX_behavioral" for hierarchy "MUX_behavioral:MUX_1" File: C:/intelFPGA_lite/18.0/Assignmen1/barrel_shifter_behavioral.vhd Line: 34
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -299,8 +299,8 @@ Info (21057): Implemented 14 device resources after synthesis - the final resour
     Info (21061): Implemented 4 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4853 megabytes
-    Info: Processing ended: Sat Feb 24 00:06:27 2024
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Processing ended: Sat Feb 24 12:14:34 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:07
 
 

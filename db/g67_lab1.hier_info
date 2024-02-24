@@ -1,87 +1,79 @@
-|barrel_shifter_structural
-X[0] => MUX_structural:MUX_1.A
-X[0] => MUX_structural:MUX_3.B
-X[0] => MUX_structural:MUX_4.B
-X[1] => MUX_structural:MUX_2.A
-X[2] => MUX_structural:MUX_1.B
-X[2] => MUX_structural:MUX_3.A
-X[3] => MUX_structural:MUX_2.B
-X[3] => MUX_structural:MUX_4.A
-sel[0] => MUX_structural:MUX_1.S
-sel[0] => MUX_structural:MUX_2.S
-sel[0] => MUX_structural:MUX_3.S
-sel[0] => MUX_structural:MUX_4.S
-sel[1] => MUX_structural:MUX_5.S
-sel[1] => MUX_structural:MUX_6.S
-sel[1] => MUX_structural:MUX_7.S
-sel[1] => MUX_structural:MUX_8.S
-Y[0] << MUX_structural:MUX_5.Y
-Y[1] << MUX_structural:MUX_6.Y
-Y[2] << MUX_structural:MUX_7.Y
-Y[3] << MUX_structural:MUX_8.Y
+|barrel_shifter_behavioral
+X[0] => MUX_behavioral:MUX_1.A
+X[0] => MUX_behavioral:MUX_3.B
+X[0] => MUX_behavioral:MUX_4.B
+X[1] => MUX_behavioral:MUX_2.A
+X[2] => MUX_behavioral:MUX_1.B
+X[2] => MUX_behavioral:MUX_3.A
+X[3] => MUX_behavioral:MUX_2.B
+X[3] => MUX_behavioral:MUX_4.A
+sel[0] => MUX_behavioral:MUX_1.S
+sel[0] => MUX_behavioral:MUX_2.S
+sel[0] => MUX_behavioral:MUX_3.S
+sel[0] => MUX_behavioral:MUX_4.S
+sel[1] => MUX_behavioral:MUX_5.S
+sel[1] => MUX_behavioral:MUX_6.S
+sel[1] => MUX_behavioral:MUX_7.S
+sel[1] => MUX_behavioral:MUX_8.S
+Y[0] << MUX_behavioral:MUX_5.Y
+Y[1] << MUX_behavioral:MUX_6.Y
+Y[2] << MUX_behavioral:MUX_7.Y
+Y[3] << MUX_behavioral:MUX_8.Y
 
 
-|barrel_shifter_structural|MUX_structural:MUX_1
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_1
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_2
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_2
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_3
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_3
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_4
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_4
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_5
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_5
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_6
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_6
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_7
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_7
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|barrel_shifter_structural|MUX_structural:MUX_8
-A => Y.IN0
-B => Y.IN0
-S => Y.IN1
-S => Y.IN1
+|barrel_shifter_behavioral|MUX_behavioral:MUX_8
+A => Y.DATAB
+B => Y.DATAA
+S => Y.OUTPUTSELECT
 Y <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 

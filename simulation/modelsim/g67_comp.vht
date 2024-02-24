@@ -77,9 +77,9 @@ END PROCESS always;
 
 generate_test: PROCESS
 BEGIN
-    FOR i IN 0 TO 16 LOOP -- loop over all A values
+    FOR i IN 0 TO 15 LOOP -- loop over all A values
         A <= std_logic_vector(to_unsigned(i, 4)); -- convert the loop variable i to std_logic_vector
-        FOR j IN 0 TO 16 LOOP -- loop over all B values
+        FOR j IN 0 TO 15 LOOP -- loop over all B values
             B <= std_logic_vector(to_unsigned(j, 4)); -- convert the loop variable j to std_logic_vector
             WAIT FOR 10 ns; -- suspend process for 10 nanoseconds at the start of each loop
         END LOOP; -- end the j loop
