@@ -1,0 +1,11 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity barrel_shifter_behavioral is
+    Port (
+        X   : in  std_logic_vector(3 downto 0);
+        sel : in  std_logic_vector(1 downto 0);
+        Y   : out std_logic_vector(3 downto 0)
+    );
+end barrel_shifter_behavioral;
