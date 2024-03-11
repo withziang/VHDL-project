@@ -1,0 +1,11 @@
+library IEEE;
+library work;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+s
+
+entity SO is
+Port(In1, In2 : in std_logic_vector(4 downto 0);
+Out1, Out2 : out std_logic_vector(4 downto 0);
+Permutation_out : out std_logic);
+end SO;

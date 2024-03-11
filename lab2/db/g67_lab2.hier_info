@@ -1,0 +1,53 @@
+|SW
+Idx1[0] => MUX_3:mux1.A[0]
+Idx1[0] => MUX_3:mux2.B[0]
+Idx1[1] => MUX_3:mux1.A[1]
+Idx1[1] => MUX_3:mux2.B[1]
+Idx1[2] => MUX_3:mux1.A[2]
+Idx1[2] => MUX_3:mux2.B[2]
+Idx2[0] => MUX_3:mux1.B[0]
+Idx2[0] => MUX_3:mux2.A[0]
+Idx2[1] => MUX_3:mux1.B[1]
+Idx2[1] => MUX_3:mux2.A[1]
+Idx2[2] => MUX_3:mux1.B[2]
+Idx2[2] => MUX_3:mux2.A[2]
+Permutation_in => MUX_3:mux1.S
+Permutation_in => MUX_3:mux2.S
+Out_idx1[0] <= MUX_3:mux1.Y[0]
+Out_idx1[1] <= MUX_3:mux1.Y[1]
+Out_idx1[2] <= MUX_3:mux1.Y[2]
+Out_idx2[0] <= MUX_3:mux2.Y[0]
+Out_idx2[1] <= MUX_3:mux2.Y[1]
+Out_idx2[2] <= MUX_3:mux2.Y[2]
+
+
+|SW|MUX_3:mux1
+A[0] => Y[0].DATAB
+A[1] => Y[1].DATAB
+A[2] => Y[2].DATAB
+B[0] => Y[0].DATAA
+B[1] => Y[1].DATAA
+B[2] => Y[2].DATAA
+S => Y[0].OUTPUTSELECT
+S => Y[1].OUTPUTSELECT
+S => Y[2].OUTPUTSELECT
+Y[0] <= Y[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SW|MUX_3:mux2
+A[0] => Y[0].DATAB
+A[1] => Y[1].DATAB
+A[2] => Y[2].DATAB
+B[0] => Y[0].DATAA
+B[1] => Y[1].DATAA
+B[2] => Y[2].DATAA
+S => Y[0].OUTPUTSELECT
+S => Y[1].OUTPUTSELECT
+S => Y[2].OUTPUTSELECT
+Y[0] <= Y[0].DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y[1].DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y[2].DB_MAX_OUTPUT_PORT_TYPE
+
+

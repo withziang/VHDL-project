@@ -1,0 +1,61 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "Out_idx1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Out_idx1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Out_idx1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Out_idx2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Out_idx2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Out_idx2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Idx2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Permutation_in",
+					"strict" : false
+				},
+				{
+					"name" : "Idx1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Idx2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Idx1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Idx2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Idx1[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
