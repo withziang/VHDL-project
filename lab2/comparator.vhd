@@ -9,17 +9,18 @@ end comparator;
 
 architecture myimplementation of comparator is
 begin
--- check every bit from msb, 
--- default F is 0, meaning A<=B
--- if all the previous bits are the same plus A is bigger than B on that bit, return 1
-
-F <= '1' when                                                          (A(4) = '1' and B(4) = '0')  or
-	   (A(4) = B(4) and                                                 (A(3) = '1' and B(3) = '0')) or
-      (A(4) = B(4) and A(3) = B(3) and                                 (A(2) = '1' and B(2) = '0')) or
-      (A(4) = B(4) and A(3) = B(3) and A(2) = B(2) and                 (A(1) = '1' and B(1) = '0')) or
-      (A(4) = B(4) and A(3) = B(3) and A(2) = B(2) and A(1) = B(1) and (A(0) = '1' and B(0) = '0'))
-        else '0';
-		  
+    process(A, B)
+    begin
+        if (A(4) = '1' and B(4) = '0') or
+           (A(4) = B(4) and A(3) = '1' and B(3) = '0') or
+           (A(4) = B(4) and A(3) = B(3) and A(2) = '1' and B(2) = '0') or
+           (A(4) = B(4) and A(3) = B(3) and A(2) = B(2) and A(1) = '1' and B(1) = '0') or
+           (A(4) = B(4) and A(3) = B(3) and A(2) = B(2) and A(1) = B(1) and A(0) = '1' and B(0) = '0') then
+            F <= '1';
+        else
+            F <= '0';
+        end if;
+    end process;
 		-- pin: 11
 		-- gate: 3
 end myimplementation;

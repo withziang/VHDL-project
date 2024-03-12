@@ -6,6 +6,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity MSBN is
     Port (
         In_1, In_2, In_3, In_4, In_5, In_6, In_7, In_8 : in std_logic_vector (4 downto 0);
+		  Ot_1, Ot_2, Ot_3, Ot_4, Ot_5, Ot_6, Ot_7, Ot_8 : out std_logic_vector (4 downto 0);
         Out_1, Out_2, Out_3, Out_4, Out_5, Out_6, Out_7, Out_8 : out std_logic_vector (2 downto 0)
     );
 end MSBN;
@@ -13,6 +14,7 @@ end MSBN;
 architecture Sort of MSBN is
 -- inter signal
 signal otow : std_logic_vector(18 downto 0);
+
 signal o0, o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16, o17, o18, o19, 
 		o20, o21, o22, o23, o24, o25, o26, o27, o28, o29, o30, o31, o32, o33, o34, 
 		o35, o36, o37 : std_logic_vector(4 downto 0);
@@ -63,6 +65,16 @@ begin
 	 SO_18: SO port map (In1 => o30, In2 => o29, Out1 => o34, Out2 => o35, Permutation_out => otow(17));
 	 SO_19: SO port map (In1 => o27, In2 => o31, Out1 => o36, Out2 => o37, Permutation_out => otow(18));
 	 
+	-- debug
+	Ot_1 <= o16;
+	Ot_2 <= o32;
+	Ot_3 <= o33;
+	Ot_4 <= o34;
+	Ot_5 <= o35;
+	Ot_6 <= o36;
+	Ot_7 <= o37;
+	Ot_8 <= o23;
+	
 	-- SW 
     SW_1: SW port map (Idx1 => w0, Idx2 => w4, Permutation_in => otow(0), Out_idx1 => Out_1, Out_idx2 => Out_2);
 	 SW_2: SW port map (Idx1 => w2, Idx2 => w6, Permutation_in => otow(1), Out_idx1 => Out_3, Out_idx2 => Out_4);
