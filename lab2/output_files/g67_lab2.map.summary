@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon Mar 11 16:03:13 2024
+Analysis & Synthesis Status : Successful - Mon Mar 11 22:08:41 2024
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 Revision Name : g67_lab2
-Top-level Entity Name : SW
+Top-level Entity Name : MSBN
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 0
-Total pins : 13
+Total pins : 64
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

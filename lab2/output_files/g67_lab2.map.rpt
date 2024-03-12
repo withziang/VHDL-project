@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g67_lab2
-Mon Mar 11 16:03:13 2024
+Mon Mar 11 22:08:41 2024
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
 
 
@@ -14,9 +14,19 @@ Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "SW:SW_19"
+ 10. Port Connectivity Checks: "SW:SW_18"
+ 11. Port Connectivity Checks: "SW:SW_17"
+ 12. Port Connectivity Checks: "SW:SW_12"
+ 13. Port Connectivity Checks: "SW:SW_9"
+ 14. Port Connectivity Checks: "SO:SO_19"
+ 15. Port Connectivity Checks: "SO:SO_18"
+ 16. Port Connectivity Checks: "SO:SO_17"
+ 17. Port Connectivity Checks: "SO:SO_12"
+ 18. Port Connectivity Checks: "SO:SO_9"
+ 19. Post-Synthesis Netlist Statistics for Top Partition
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -42,14 +52,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Mar 11 16:03:13 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon Mar 11 22:08:41 2024       ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Lite Edition ;
 ; Revision Name                   ; g67_lab2                                    ;
-; Top-level Entity Name           ; SW                                          ;
+; Top-level Entity Name           ; MSBN                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 13                                          ;
+; Total pins                      ; 64                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -68,7 +78,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; SW                 ; g67_lab2           ;
+; Top-level entity name                                                           ; MSBN               ; g67_lab2           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -165,52 +175,155 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                          ;
-+----------------------------------+-----------------+-----------------+--------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path   ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------+---------+
-; MUX_3.vhd                        ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/MUX_3.vhd ;         ;
-; SW.vhd                           ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/SW.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------+---------+
+; comparator.vhd                   ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/comparator.vhd ;         ;
+; MUX_5.vhd                        ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/MUX_5.vhd      ;         ;
+; SO.vhd                           ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/SO.vhd         ;         ;
+; MUX_3.vhd                        ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/MUX_3.vhd      ;         ;
+; SW.vhd                           ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/SW.vhd         ;         ;
+; MSBN.vhd                         ; yes             ; User VHDL File  ; C:/code/ECSE222/lab2/MSBN.vhd       ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Estimate of Logic utilization (ALMs needed) ; 3                    ;
-;                                             ;                      ;
-; Combinational ALUT usage for logic          ; 6                    ;
-;     -- 7 input functions                    ; 0                    ;
-;     -- 6 input functions                    ; 0                    ;
-;     -- 5 input functions                    ; 0                    ;
-;     -- 4 input functions                    ; 0                    ;
-;     -- <=3 input functions                  ; 6                    ;
-;                                             ;                      ;
-; Dedicated logic registers                   ; 0                    ;
-;                                             ;                      ;
-; I/O pins                                    ; 13                   ;
-;                                             ;                      ;
-; Total DSP Blocks                            ; 0                    ;
-;                                             ;                      ;
-; Maximum fan-out node                        ; Permutation_in~input ;
-; Maximum fan-out                             ; 6                    ;
-; Total fan-out                               ; 37                   ;
-; Average fan-out                             ; 1.16                 ;
-+---------------------------------------------+----------------------+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                 ;
++---------------------------------------------+-------------------------------+
+; Resource                                    ; Usage                         ;
++---------------------------------------------+-------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 227                           ;
+;                                             ;                               ;
+; Combinational ALUT usage for logic          ; 344                           ;
+;     -- 7 input functions                    ; 0                             ;
+;     -- 6 input functions                    ; 109                           ;
+;     -- 5 input functions                    ; 59                            ;
+;     -- 4 input functions                    ; 67                            ;
+;     -- <=3 input functions                  ; 109                           ;
+;                                             ;                               ;
+; Dedicated logic registers                   ; 0                             ;
+;                                             ;                               ;
+; I/O pins                                    ; 64                            ;
+;                                             ;                               ;
+; Total DSP Blocks                            ; 0                             ;
+;                                             ;                               ;
+; Maximum fan-out node                        ; SO:SO_16|comparator:comp1|F~4 ;
+; Maximum fan-out                             ; 32                            ;
+; Total fan-out                               ; 1581                          ;
+; Average fan-out                             ; 3.35                          ;
++---------------------------------------------+-------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |SW                        ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 13   ; 0            ; |SW                 ; SW          ; work         ;
-;    |MUX_3:mux1|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SW|MUX_3:mux1      ; MUX_3       ; work         ;
-;    |MUX_3:mux2|            ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SW|MUX_3:mux2      ; MUX_3       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------+--------------+
+; |MSBN                      ; 344 (0)             ; 0 (0)                     ; 0                 ; 0          ; 64   ; 0            ; |MSBN                           ; MSBN        ; work         ;
+;    |SO:SO_10|              ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_10                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_10|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_10|MUX_5:mux2       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_10|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_11|              ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_11                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_11|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_11|MUX_5:mux2       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_11|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_12|              ; 7 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_12                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_12|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_12|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_13|              ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_13                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_13|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_13|MUX_5:mux2       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_13|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_14|              ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_14                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_14|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_14|MUX_5:mux2       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_14|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_15|              ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_15                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_15|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_15|MUX_5:mux2       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_15|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_16|              ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_16                  ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_16|MUX_5:mux1       ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_16|MUX_5:mux2       ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_16|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_17|              ; 11 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_17                  ; SO          ; work         ;
+;       |comparator:comp1|   ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_17|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_18|              ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_18                  ; SO          ; work         ;
+;       |comparator:comp1|   ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_18|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_19|              ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_19                  ; SO          ; work         ;
+;       |comparator:comp1|   ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_19|comparator:comp1 ; comparator  ; work         ;
+;    |SO:SO_1|               ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_1                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_1|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_1|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_1|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_2|               ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_2                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_2|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_2|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_2|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_3|               ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_3                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_3|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_3|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_3|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_4|               ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_4                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_4|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_4|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_4|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_5|               ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_5                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_5|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_5|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_5|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_6|               ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_6                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_6|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_6|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_6|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_7|               ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_7                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_7|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_7|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_7|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_8|               ; 14 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_8                   ; SO          ; work         ;
+;       |MUX_5:mux1|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_8|MUX_5:mux1        ; MUX_5       ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_8|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_8|comparator:comp1  ; comparator  ; work         ;
+;    |SO:SO_9|               ; 9 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_9                   ; SO          ; work         ;
+;       |MUX_5:mux2|         ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_9|MUX_5:mux2        ; MUX_5       ; work         ;
+;       |comparator:comp1|   ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SO:SO_9|comparator:comp1  ; comparator  ; work         ;
+;    |SW:SW_10|              ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_10                  ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_10|MUX_3:mux1       ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_10|MUX_3:mux2       ; MUX_3       ; work         ;
+;    |SW:SW_11|              ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_11                  ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_11|MUX_3:mux1       ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_11|MUX_3:mux2       ; MUX_3       ; work         ;
+;    |SW:SW_14|              ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_14                  ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_14|MUX_3:mux1       ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_14|MUX_3:mux2       ; MUX_3       ; work         ;
+;    |SW:SW_1|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_1                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_1|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_1|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_2|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_2                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_2|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_2|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_3|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_3                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_3|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_3|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_4|               ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_4                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_4|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_4|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_5|               ; 15 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_5                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_5|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_5|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_6|               ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_6                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_6|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_6|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_7|               ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_7                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_7|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_7|MUX_3:mux2        ; MUX_3       ; work         ;
+;    |SW:SW_8|               ; 19 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_8                   ; SW          ; work         ;
+;       |MUX_3:mux1|         ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_8|MUX_3:mux1        ; MUX_3       ; work         ;
+;       |MUX_3:mux2|         ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |MSBN|SW:SW_8|MUX_3:mux2        ; MUX_3       ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -229,18 +342,126 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++----------------------------------------------+
+; Port Connectivity Checks: "SW:SW_19"         ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; idx1[2]    ; Input ; Info     ; Stuck at VCC ;
+; idx1[1]    ; Input ; Info     ; Stuck at GND ;
+; idx1[0]    ; Input ; Info     ; Stuck at VCC ;
+; idx2[2..1] ; Input ; Info     ; Stuck at VCC ;
+; idx2[0]    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "SW:SW_18"         ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; idx1[1..0] ; Input ; Info     ; Stuck at VCC ;
+; idx1[2]    ; Input ; Info     ; Stuck at GND ;
+; idx2[1..0] ; Input ; Info     ; Stuck at GND ;
+; idx2[2]    ; Input ; Info     ; Stuck at VCC ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "SW:SW_17"         ;
++------------+-------+----------+--------------+
+; Port       ; Type  ; Severity ; Details      ;
++------------+-------+----------+--------------+
+; idx1[2..1] ; Input ; Info     ; Stuck at GND ;
+; idx1[0]    ; Input ; Info     ; Stuck at VCC ;
+; idx2[2]    ; Input ; Info     ; Stuck at GND ;
+; idx2[1]    ; Input ; Info     ; Stuck at VCC ;
+; idx2[0]    ; Input ; Info     ; Stuck at GND ;
++------------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "SW:SW_12"   ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; idx2 ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "SW:SW_9"    ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; idx1 ; Input ; Info     ; Stuck at GND ;
++------+-------+----------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SO:SO_19"                                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SO:SO_18"                                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SO:SO_17"                                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SO:SO_12"                                                                           ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out2 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SO:SO_9"                                                                            ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; out1 ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 6                           ;
-;     normal            ; 6                           ;
-;         3 data inputs ; 6                           ;
-; boundary_port         ; 13                          ;
+; arriav_lcell_comb     ; 344                         ;
+;     normal            ; 344                         ;
+;         2 data inputs ; 51                          ;
+;         3 data inputs ; 58                          ;
+;         4 data inputs ; 67                          ;
+;         5 data inputs ; 59                          ;
+;         6 data inputs ; 109                         ;
+; boundary_port         ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 13.33                       ;
 +-----------------------+-----------------------------+
 
 
@@ -249,7 +470,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -259,7 +480,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Lite Edition
-    Info: Processing started: Mon Mar 11 16:03:04 2024
+    Info: Processing started: Mon Mar 11 22:08:27 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g67_lab2 -c g67_lab2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -278,22 +499,42 @@ Info (12021): Found 2 design units, including 1 entities, in source file mux_3.v
 Info (12021): Found 2 design units, including 1 entities, in source file sw.vhd
     Info (12022): Found design unit 1: SW-arch_sw File: C:/code/ECSE222/lab2/SW.vhd Line: 13
     Info (12023): Found entity 1: SW File: C:/code/ECSE222/lab2/SW.vhd Line: 7
-Info (12127): Elaborating entity "SW" for the top level hierarchy
-Info (12128): Elaborating entity "MUX_3" for hierarchy "MUX_3:mux1" File: C:/code/ECSE222/lab2/SW.vhd Line: 29
+Info (12021): Found 2 design units, including 1 entities, in source file msbn.vhd
+    Info (12022): Found design unit 1: MSBN-Sort File: C:/code/ECSE222/lab2/MSBN.vhd Line: 13
+    Info (12023): Found entity 1: MSBN File: C:/code/ECSE222/lab2/MSBN.vhd Line: 6
+Info (12127): Elaborating entity "MSBN" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(16): object "o16" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 16
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(17): object "o23" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(17): object "o32" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(17): object "o33" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(17): object "o34" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 17
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(18): object "o35" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 18
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(18): object "o36" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 18
+Warning (10036): Verilog HDL or VHDL warning at MSBN.vhd(18): object "o37" assigned a value but never read File: C:/code/ECSE222/lab2/MSBN.vhd Line: 18
+Info (12128): Elaborating entity "SO" for hierarchy "SO:SO_1" File: C:/code/ECSE222/lab2/MSBN.vhd Line: 40
+Info (12128): Elaborating entity "comparator" for hierarchy "SO:SO_1|comparator:comp1" File: C:/code/ECSE222/lab2/SO.vhd Line: 38
+Info (12128): Elaborating entity "MUX_5" for hierarchy "SO:SO_1|MUX_5:mux1" File: C:/code/ECSE222/lab2/SO.vhd Line: 44
+Info (10041): Inferred latch for "Y[0]" at MUX_5.vhd(19) File: C:/code/ECSE222/lab2/MUX_5.vhd Line: 19
+Info (10041): Inferred latch for "Y[1]" at MUX_5.vhd(19) File: C:/code/ECSE222/lab2/MUX_5.vhd Line: 19
+Info (10041): Inferred latch for "Y[2]" at MUX_5.vhd(19) File: C:/code/ECSE222/lab2/MUX_5.vhd Line: 19
+Info (10041): Inferred latch for "Y[3]" at MUX_5.vhd(19) File: C:/code/ECSE222/lab2/MUX_5.vhd Line: 19
+Info (10041): Inferred latch for "Y[4]" at MUX_5.vhd(19) File: C:/code/ECSE222/lab2/MUX_5.vhd Line: 19
+Info (12128): Elaborating entity "SW" for hierarchy "SW:SW_1" File: C:/code/ECSE222/lab2/MSBN.vhd Line: 66
+Info (12128): Elaborating entity "MUX_3" for hierarchy "SW:SW_1|MUX_3:mux1" File: C:/code/ECSE222/lab2/SW.vhd Line: 29
 Info (10041): Inferred latch for "Y[0]" at MUX_3.vhd(19) File: C:/code/ECSE222/lab2/MUX_3.vhd Line: 19
 Info (10041): Inferred latch for "Y[1]" at MUX_3.vhd(19) File: C:/code/ECSE222/lab2/MUX_3.vhd Line: 19
 Info (10041): Inferred latch for "Y[2]" at MUX_3.vhd(19) File: C:/code/ECSE222/lab2/MUX_3.vhd Line: 19
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 6 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Mon Mar 11 16:03:13 2024
-    Info: Elapsed time: 00:00:09
+Info (21057): Implemented 408 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 40 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21061): Implemented 344 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 4856 megabytes
+    Info: Processing ended: Mon Mar 11 22:08:41 2024
+    Info: Elapsed time: 00:00:14
     Info: Total CPU time (on all processors): 00:00:08
 
 
