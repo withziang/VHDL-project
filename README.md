@@ -6,3 +6,9 @@ This repo is to store and backup every ECSE 222 lab assignment. Mainly VHDL, com
 - ModelSim-Altera
 
 
+# files explain
+- ``.qpf`` quartus project file
+- ``.bdf`` graph schematic file
+- ``.vhd`` vhdl file
+- ``.vht`` testbench file
+
