@@ -14,5 +14,5 @@ This repo is to store and backup every ECSE 222 lab assignment. Mainly VHDL, com
 
 # Each lab description
 
-- Lab 1: Multiplexer and barrier shifter
+- Lab 1: Multiplexer and barrel shifter
 - Lab 2: 8 5-bits unsigned integers sorter 
